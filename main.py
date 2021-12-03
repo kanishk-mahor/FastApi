@@ -14,6 +14,10 @@ class Post(BaseModel):
     rating: Optional[int] = None
 
 
+my_posts = [{"title": "title of post1",
+             "content": "content of post1", "id": 1}, {"title": "favorite foods", "content": "pizza", "id": 2}]
+
+
 @app.get("/")
 def get_user():
     return {"message": "Welcome to Api"}
@@ -21,7 +25,7 @@ def get_user():
 
 @app.get("/posts")
 def get_posts():
-    return {"data: Posts triggered"}
+    return {"data": my_posts}
 
 
 @app.post("/createposts")
